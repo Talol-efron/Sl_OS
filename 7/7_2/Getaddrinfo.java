@@ -8,12 +8,13 @@ public class Getaddrinfo{
             Enumeration interfaces = NetworkInterface.getNetworkInterfaces();
             while (interfaces.hasMoreElements()) {
                 NetworkInterface intf = (NetworkInterface)interfaces.nextElement();
-                System.out.println("The name of this network interface is " + intf.getName() + ".");
-                System.out.println("  All the IP addresses of this network interface are: ");
+                System.out.println(intf.getName() + ":");
+                //System.out.println("   Status: active");
+                //System.out.println("  Address: ");
                 Enumeration addresses = intf.getInetAddresses();
                 while (addresses.hasMoreElements()) {
                     InetAddress address = (InetAddress)addresses.nextElement();
-                    System.out.println("    " + address.getHostAddress());
+                    System.out.println("   Address: " + address.getHostAddress());
                 }
             }
         } catch (Exception e) {
